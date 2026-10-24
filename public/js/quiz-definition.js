@@ -167,7 +167,7 @@
         { id: 'frontal', text: 'Principalmente na frente (linha frontal)', caption: 'Queda mais evidente na linha frontal / entradas.', image: IMG + 'q12-1.webp?v=20261005b', severity: 0.35, finding: 'perda concentrada nas entradas ou na linha frontal' },
         { id: 'topo', text: 'Principalmente no topo (coroa/vértice)', caption: 'Queda mais evidente no topo da cabeça (coroa/vértice).', image: IMG + 'q12-2.webp?v=20261005b', severity: 0.35, finding: 'perda concentrada no topo ou na coroa' },
         { id: 'varias', text: 'Em várias regiões (frente e topo)', caption: 'Perda de cabelo na linha frontal e no topo.', image: IMG + 'q12-3.webp?v=20261005b', severity: 0.85, finding: 'perda em várias regiões da cabeça' },
-        { id: 'difusa', text: 'De forma difusa (por toda a cabeça)', caption: 'Redução geral da densidade dos fios em toda a cabeça.', image: IMG + 'q12-4.webp?v=20261005b', severity: 0.6, finding: 'perda difusa por toda a cabeça' },
+        { id: 'difusa', text: 'De forma difusa (por toda a cabeça)', caption: 'Redução geral da densidade dos fios em toda a cabeça.', image: IMG + 'q12-4.webp?v=20261023', severity: 0.6, finding: 'perda difusa por toda a cabeça' },
         { id: 'nao_identifico', text: 'Não consigo identificar', caption: 'Não percebo áreas específicas de calvície ou tenho dificuldade em identificar.', image: IMG + 'q12-5.webp?v=20261005b', severity: 0.15 }
       ]
     },
