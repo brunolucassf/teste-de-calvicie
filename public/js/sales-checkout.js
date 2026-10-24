@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2. Setup Video Poster / Vimeo Embed
+  // O player só carrega no clique (nada do Vimeo roda antes). dnt pede ao Vimeo que não rastreie o visitante (LGPD).
+  // Usa o SDK só pra garantir áudio a 50% ao iniciar (sem SDK, o autoplay=1 cru costuma iniciar mutado); controles continuam os nativos do Vimeo, sem nenhuma customização de UI.
   const videoWrapper = document.getElementById('video-wrapper');
   const videoPoster = document.getElementById('video-poster');
   if (videoWrapper && videoPoster) {
@@ -68,7 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
       const vimeoId = (videoWrapper.getAttribute('data-vimeo-id') || '').replace(/\D/g, '');
       if (!vimeoId) return;
       const videoTitle = videoWrapper.getAttribute('data-video-title') || 'Vídeo de orientação';
-      // O player só é carregado no clique (nada do Vimeo roda antes). dnt=1 pede ao Vimeo que não rastreie o visitante (LGPD).
+      videoPoster.remove();
+
+      if (window.Vimeo && typeof window.Vimeo.Player === 'function') {
+        const player = new window.Vimeo.Player(videoWrapper, {
+          id: vimeoId,
+          autoplay: true,
+          muted: false,
+          title: false,
+          byline: false,
+          portrait: false,
+          badge: false,
+          playsinline: true,
+          dnt: true
+        });
+        player.ready()
+          .then(() => {
+            player.element.title = videoTitle;
+            return player.setVolume(0.5);
+          })
+          .catch(() => {});
+        return;
+      }
+
+      // Fallback sem SDK, caso o script do Vimeo não carregue.
       const iframe = document.createElement('iframe');
       iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0&playsinline=1&dnt=1`;
       iframe.title = videoTitle;
@@ -76,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       iframe.setAttribute('allowfullscreen', '');
       iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
       iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;';
-      videoWrapper.replaceChildren(iframe);
+      videoWrapper.appendChild(iframe);
     });
   }
 
