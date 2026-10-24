@@ -80,13 +80,26 @@
     },
     {
       id: 'q5', stage: 'mudanca', layout: 'image',
-      title: 'Você percebe rarefação ou diminuição do volume na região do topo ou da coroa da cabeça?',
-      options: [
-        { id: 'nao', text: 'Não', caption: 'Boa densidade no topo', image: IMG + 'q5-1.webp', severity: 0, negativeFinding: 'boa densidade no topo' },
-        { id: 'discreta', text: 'Discreta', caption: 'Leve rarefação no vértice', image: IMG + 'q5-2.webp', severity: 0.33, finding: 'leve rarefação no topo ou coroa' },
-        { id: 'moderada', text: 'Moderada', caption: 'Rarefação mais evidente', image: IMG + 'q5-3.webp', severity: 0.66, finding: 'rarefação no topo' },
-        { id: 'importante', text: 'Importante', caption: 'Área clara e bem visível', image: IMG + 'q5-4.webp', severity: 1, finding: 'rarefação importante no topo ou coroa' }
-      ]
+      variants: {
+        masculino: {
+          title: 'Você percebe rarefação ou diminuição do volume na região do topo ou da coroa da cabeça?',
+          options: [
+            { id: 'nao', text: 'Não', caption: 'Boa densidade no topo', image: IMG + 'q5-1.webp', severity: 0, negativeFinding: 'boa densidade no topo' },
+            { id: 'discreta', text: 'Discreta', caption: 'Leve rarefação no vértice', image: IMG + 'q5-2.webp', severity: 0.33, finding: 'leve rarefação no topo ou coroa' },
+            { id: 'moderada', text: 'Moderada', caption: 'Rarefação mais evidente', image: IMG + 'q5-3.webp', severity: 0.66, finding: 'rarefação no topo' },
+            { id: 'importante', text: 'Importante', caption: 'Área clara e bem visível', image: IMG + 'q5-4.webp', severity: 1, finding: 'rarefação importante no topo ou coroa' }
+          ]
+        },
+        feminino: {
+          title: 'Você percebe rarefação ou diminuição do volume na região do topo ou da coroa da cabeça?',
+          options: [
+            { id: 'nao', text: 'Não', caption: 'Boa densidade no topo', image: IMG + 'q5-mulher-1.webp', severity: 0, negativeFinding: 'boa densidade no topo' },
+            { id: 'discreta', text: 'Discreta', caption: 'Leve rarefação no vértice', image: IMG + 'q5-mulher-2.webp', severity: 0.33, finding: 'leve rarefação no topo ou coroa' },
+            { id: 'moderada', text: 'Moderada', caption: 'Rarefação mais evidente', image: IMG + 'q5-mulher-3.webp', severity: 0.66, finding: 'rarefação no topo' },
+            { id: 'importante', text: 'Importante', caption: 'Área clara e bem visível', image: IMG + 'q5-mulher-4.webp', severity: 1, finding: 'rarefação importante no topo ou coroa' }
+          ]
+        }
+      }
     },
     {
       id: 'q6', stage: 'mudanca', layout: 'image',
