@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.Vimeo && typeof window.Vimeo.Player === 'function') {
         const player = new window.Vimeo.Player(videoWrapper, {
           id: vimeoId,
-          autoplay: true,
           muted: false,
           title: false,
           byline: false,
@@ -84,10 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
           playsinline: true,
           dnt: true
         });
+        // play() chamado já, no mesmo clique (fora do .then do ready()): esperar o ready()
+        // pra chamar play() perde o gesto do usuário e o navegador bloqueia o autoplay com som,
+        // sobrando a capa/play nativo do Vimeo por cima (obrigando a pessoa a clicar de novo).
+        player.play().catch(() => {});
+
         player.ready()
           .then(() => {
             player.element.title = videoTitle;
-            return player.setVolume(0.5);
+            player.setVolume(0.5).catch(() => {});
+            // O vídeo de origem pode não ser exatamente 9:16; ajusta o formato da moldura pra
+            // bater com a proporção real, pra não sobrar barra preta nas laterais.
+            Promise.all([player.getVideoWidth(), player.getVideoHeight()])
+              .then(([w, h]) => {
+                if (w && h) videoWrapper.style.aspectRatio = `${w} / ${h}`;
+              })
+              .catch(() => {});
           })
           .catch(() => {});
         return;
