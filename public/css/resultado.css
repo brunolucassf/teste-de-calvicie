@@ -373,6 +373,16 @@
   border: 3px solid rgba(212, 175, 55, 0.35);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 35px rgba(212, 175, 55, 0.2);
   overflow: hidden;
+  animation: videoFrameGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes videoFrameGlow {
+  0%, 100% { box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 35px rgba(212, 175, 55, 0.2); }
+  50% { box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 55px rgba(212, 175, 55, 0.5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vertical-video-wrapper { animation: none; }
 }
 
 .vertical-video-wrapper iframe {
