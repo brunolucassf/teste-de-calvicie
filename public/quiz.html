@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Perfil Capilar — Teste de Calvície | Dr. Ito Meireles</title>
+  <meta name="description" content="Responda a algumas perguntas sobre seu cabelo e receba uma análise educativa do seu perfil capilar em cerca de 2 minutos.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/quiz.css">
+  <link rel="icon" type="image/png" href="/img/favicon-hairline.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+</head>
+<body>
+
+  <!-- ====== QUIZ PAGE ====== -->
+  <div class="quiz-page" id="quiz-app">
+
+    <header class="quiz-header">
+      <div class="container quiz-header__inner">
+        <a href="/" class="quiz-header__brand">
+          <img src="/img/logo-hairline.png" alt="Teste de Calvície" class="quiz-header__logo-img" width="36" height="36">
+          <div class="quiz-header__brand-text">
+            <span class="quiz-header__brand-name">Perfil Capilar</span>
+            <span class="quiz-header__brand-sub">Hairline Academy · Dr. Ito Meireles</span>
+          </div>
+        </a>
+        <div class="quiz-header__progress-wrap" id="progress-wrap" hidden>
+          <div class="quiz-header__progress-bar" role="progressbar" aria-label="Progresso do teste" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+            <div class="quiz-header__progress-fill" id="progress-fill"></div>
+          </div>
+          <span class="quiz-header__progress-text" id="progress-text"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="quiz-body">
+      <div class="quiz-container">
+        <div id="quiz-stage" aria-live="polite"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ====== PROCESSING SCREEN ====== -->
+  <div class="processing-screen" id="processing-screen" hidden>
+    <div class="processing__visual" aria-hidden="true">
+      <div class="processing__ring"></div>
+      <div class="processing__ring"></div>
+      <div class="processing__ring"></div>
+      <div class="processing__icon">🧬</div>
+    </div>
+    <h2 class="processing__title">Analisando suas respostas...</h2>
+    <p class="processing__step">Estamos cruzando informações sobre:</p>
+    <ul class="processing__checklist" id="processing-checklist" aria-live="polite">
+      <li>padrão da perda</li>
+      <li>densidade percebida</li>
+      <li>afinamento dos fios</li>
+      <li>histórico familiar</li>
+      <li>evolução</li>
+      <li>fatores associados</li>
+    </ul>
+  </div>
+
+  <!-- ====== COOKIE BANNER (LGPD) ====== -->
+  <div class="cookie-banner" id="cookie-banner" role="region" aria-label="Aviso de cookies">
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">
+        🍪 Usamos cookies necessários para o funcionamento do site e, somente com a sua permissão, cookies de análise e marketing.
+        Saiba mais na <a href="/politica-cookies.html" id="link-cookies">Política de Cookies</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept-all">Aceitar Todos</button>
+        <button class="cookie-banner__btn cookie-banner__btn--customize" id="cookie-customize">Personalizar</button>
+        <button class="cookie-banner__btn cookie-banner__btn--minimal" id="cookie-accept-minimal">Apenas Necessários</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== COOKIE PREFERENCES MODAL (LGPD) ====== -->
+  <div class="cookie-modal-overlay" id="cookie-modal-overlay">
+    <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+      <h3 class="cookie-modal__title" id="cookie-modal-title">Preferências de Cookies</h3>
+      <p class="cookie-modal__desc">
+        Escolha quais categorias de cookies você permite. Cookies necessários não podem ser desativados pois são essenciais para o funcionamento do site.
+      </p>
+
+      <div class="cookie-modal__category">
+        <div class="cookie-modal__category-info">
+          <div class="cookie-modal__category-title">Necessários</div>
+          <div class="cookie-modal__category-desc">Essenciais para o funcionamento do site (sessão, segurança, carrinho de compra).</div>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" checked disabled aria-label="Cookies necessários (sempre ativos)">
+          <span class="cookie-toggle__slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-modal__category">
+        <div class="cookie-modal__category-info">
+          <div class="cookie-modal__category-title">Analíticos</div>
+          <div class="cookie-modal__category-desc">Nos ajudam a entender como você utiliza o site para melhorarmos sua experiência.</div>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookie-toggle-analytics" aria-label="Cookies analíticos">
+          <span class="cookie-toggle__slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-modal__category">
+        <div class="cookie-modal__category-info">
+          <div class="cookie-modal__category-title">Marketing</div>
+          <div class="cookie-modal__category-desc">Usados para personalizar anúncios e medir a eficácia de campanhas (Facebook Pixel, Google Ads).</div>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookie-toggle-marketing" aria-label="Cookies de marketing">
+          <span class="cookie-toggle__slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-modal__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--minimal" id="cookie-save-preferences">Salvar Preferências</button>
+        <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-modal-accept-all">Aceitar Todos</button>
+      </div>
+      <button class="cookie-banner__btn cookie-banner__btn--customize cookie-modal__close" id="cookie-modal-close">Fechar</button>
+    </div>
+  </div>
+
+  <script src="/js/quiz-definition.js"></script>
+  <script src="/js/quiz-engine.js"></script>
+  <script src="/js/meta-pixel.js?v=20261011"></script>
+  <script src="/js/cookie-consent.js"></script>
+</body>
+</html>

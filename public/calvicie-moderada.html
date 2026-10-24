@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Perfil Capilar: Moderado — Teste de Calvície</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/resultado.css">
+  <link rel="icon" type="image/png" href="/img/favicon-hairline.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+</head>
+<body data-level="moderado">
+  <div class="result-page">
+
+    <!-- Top Bar -->
+    <header class="result-topbar">
+      <div class="result-container result-topbar__inner">
+        <a href="/" class="site-logo">
+          <img src="/img/logo-hairline.png" alt="Teste de Calvície" class="site-logo__img">
+          <div class="site-logo__text">
+            <span class="site-logo__title">Teste de Calvície</span>
+            <span class="site-logo__subtitle">by Dr. Ito Meireles</span>
+          </div>
+        </a>
+        <div class="laudo-badge" style="color: var(--warning);">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--warning); display: inline-block;"></span>
+          Avaliação Concluída
+        </div>
+      </div>
+    </header>
+
+    <!-- Resultado: Seu Perfil Capilar (antes de qualquer oferta) -->
+    <header class="result-header">
+      <div class="result-container">
+        <p class="result-header__greeting">Seu perfil capilar</p>
+        <h1 class="result-header__title" id="profile-title">Suas respostas são compatíveis com um perfil de perda capilar <span class="profile-level profile-level--moderado">MODERADO</span>.</h1>
+      </div>
+    </header>
+
+    <main class="result-container">
+
+      <!-- 1. PERFIL CAPILAR (resumo curto — destaque vai para o vídeo) -->
+      <section class="profile-result profile-result--moderado profile-result--compact" aria-labelledby="profile-title">
+        <div class="profile-scale" id="profile-scale" role="img" aria-label="Escala de perfil: Moderado">
+            <span class="profile-scale__step">Leve</span>
+            <span class="profile-scale__step is-active">Moderado <small>(seu perfil)</small></span>
+            <span class="profile-scale__step">Avançado</span>
+        </div>
+
+        <p class="profile-result__text" id="profile-text">Alterações mais perceptíveis na densidade, que merecem atenção.</p>
+
+        <div class="profile-findings" id="profile-findings" hidden>
+          <h2 class="profile-findings__title">O que suas respostas mostraram</h2>
+          <p class="profile-findings__text" id="profile-findings-text"></p>
+        </div>
+
+        <div class="profile-alerts" id="profile-alerts" hidden></div>
+
+        <p class="profile-result__disclaimer">Este teste tem caráter educativo e não substitui diagnóstico ou avaliação médica.</p>
+      </section>
+
+      <!-- 2. VÍDEO DE ORIENTAÇÃO (9:16) — destaque principal da página -->
+      <section class="video-section video-section--featured">
+        <div class="video-section__badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Orientação Informativa em Vídeo
+        </div>
+        <h2 class="video-section__title">Como estimular a densidade dos fios e frear a evolução na calvície moderada</h2>
+
+        <!-- Vertical 9:16 Video Container (Vimeo / Panda Ready) -->
+        <div class="vertical-video-wrapper" id="video-wrapper" data-vimeo-id="1186323473" data-video-title="Calvície Moderado">
+          <div class="vsl-poster" id="video-poster">
+            <img 
+              src="https://itomeireles.com.br/wp-content/uploads/2026/04/DSC09855-2.JPG-scaled.jpeg" 
+              alt="Dr. Ito Meireles orientando sobre calvície moderada" 
+              class="vsl-poster__img"
+            >
+            <div class="vsl-play-btn">
+              <svg width="32" height="32" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="vsl-caption">
+              ▶ Clique para assistir à orientação do Dr. Ito Meireles
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. PERSUASION & MARKETING SECTION (BELOW VIDEO) -->
+      <section class="persuasion-section">
+        <div class="section-headline">
+          <span class="section-headline__tag">Análise Científica & Estratégia</span>
+          <h3 class="section-headline__title">Entenda a fase crucial em que você se encontra</h3>
+        </div>
+
+        <div class="persuasion-grid">
+          <div class="persuasion-card">
+            <span class="persuasion-card__icon">⚠️</span>
+            <h4 class="persuasion-card__title">Folículos em afinamento acelerado</h4>
+            <p class="persuasion-card__text">
+              No grau moderado, os fios nas entradas e na coroa sofrem redução visível de espessura e densidade. Grande parte dos folículos ainda está viva, necessitando de suporte direcionado para não atrofiar em definitivo.
+            </p>
+          </div>
+
+          <div class="persuasion-card">
+            <span class="persuasion-card__icon">📉</span>
+            <h4 class="persuasion-card__title">A importância de agir antes da fibrose</h4>
+            <p class="persuasion-card__text">
+              Quando a raiz passa anos sob miniaturização intensa sem intervenção adequada, a região pode perder a capacidade produtiva natural. Agir no grau moderado preserva densidade e evita opções mais invasivas.
+            </p>
+          </div>
+
+          <div class="persuasion-card">
+            <span class="persuasion-card__icon">🧪</span>
+            <h4 class="persuasion-card__title">Abordagem sinérgica comprovada</h4>
+            <p class="persuasion-card__text">
+              Na fase moderada, apenas um cuidado superficial raramente é suficiente. A literatura científica aponta para a necessidade de atuação combinada: nutrição celular, estímulo da microcirculação e combate à ação hormonal local.
+            </p>
+          </div>
+
+          <div class="persuasion-card">
+            <span class="persuasion-card__icon">🎯</span>
+            <h4 class="persuasion-card__title">Orientação clara e estruturada</h4>
+            <p class="persuasion-card__text">
+              Com mais de 25 anos de prática clínica e cirúrgica, o Dr. Ito estruturou neste material educativo um cronograma detalhado de condutas com base em evidências para você acompanhar seus resultados com segurança.
+            </p>
+          </div>
+        </div>
+
+        <!-- Urgency Callout -->
+        <div class="urgency-banner">
+          <div class="urgency-banner__icon">⏰</div>
+          <div class="urgency-banner__content">
+            <h4>Alerta Clínico: O Tempo é Fator Decisivo</h4>
+            <p>A taxa de miniaturização no grau moderado avança de forma mais visível. Cada mês sem a orientação correta pode significar folículos que perdem a capacidade de recuperação clínica.</p>
+          </div>
+        </div>
+
+        <!-- VANTAGENS DO E-BOOK (MÉTODO CLÍNICO DR. ITO) -->
+        <div class="vantagens-section">
+          <div class="section-headline">
+            <span class="section-headline__tag">Vantagens do Guia Educativo</span>
+            <h3 class="section-headline__title">Por que você não deve adiar o cuidado com seus fios</h3>
+          </div>
+
+          <div class="vantagens-grid">
+            <div class="vantagem-card">
+              <span class="vantagem-card__num">01</span>
+              <div class="vantagem-card__content">
+                <h4>O seu grau de hoje não é o mesmo de amanhã</h4>
+                <p>A calvície não estabiliza sozinha. Sem a abordagem certa, ela continua avançando, muitas vezes de forma silenciosa até se tornar muito mais evidente.</p>
+              </div>
+            </div>
+
+            <div class="vantagem-card">
+              <span class="vantagem-card__num">02</span>
+              <div class="vantagem-card__content">
+                <h4>Ignorar isso também é uma escolha com consequências</h4>
+                <p>Agir quando o problema já estiver em estágio avançado vai limitar drasticamente as suas opções e tornar os cuidados mais custosos e complexos.</p>
+              </div>
+            </div>
+
+            <div class="vantagem-card">
+              <span class="vantagem-card__num">03</span>
+              <div class="vantagem-card__content">
+                <h4>O barato pode sair caro quando se trata de queda capilar</h4>
+                <p>Tratar de forma genérica ou recorrer a modismos da internet pode fazer você perder tempo precioso, dinheiro e fios que não voltam mais.</p>
+              </div>
+            </div>
+
+            <div class="vantagem-card">
+              <span class="vantagem-card__num">04</span>
+              <div class="vantagem-card__content">
+                <h4>Pare de testar. Saia da dúvida e entenda o que fazer</h4>
+                <p>Tenha acesso a um guia completo com orientações claras sobre como agir no seu caso e evitar que a calvície evolua ainda mais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. OFFER & SALES FORM SECTION (2-COL RESPONSIVE CHECKOUT) -->
+      <section class="offer-section" id="checkout-section">
+        <div class="offer-card">
+          <div class="offer-header">
+            <span class="offer-tag">📘 Guia & Material Educativo</span>
+            <h2 class="offer-title">E-book & Protocolo Prático: Reativação e Densidade Folicular</h2>
+            <p class="offer-subtitle">
+              A estratégia educativa desenvolvida com base científica e na experiência do Dr. Ito Meireles para orientar o combate ao afinamento e a preservação dos folículos na fase moderada.
+            </p>
+          </div>
+
+          <div class="offer-grid">
+            <!-- Left: What You Receive -->
+            <div class="offer-benefits-col">
+              <h3 style="font-size: var(--text-base); font-weight: 700; color: var(--gold-400); margin-bottom: var(--space-2);">O que você recebe no material:</h3>
+
+              <div class="offer-benefit-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span><strong>Estratégia Combinada:</strong> Entenda a atuação dos bloqueadores de 5-AR e dos estimuladores de microcirculação.</span>
+              </div>
+
+              <div class="offer-benefit-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span><strong>Suporte Celular e Nutrição:</strong> Cuidados de suplementação e micronutrientes para recuperação da haste capilar.</span>
+              </div>
+
+              <div class="offer-benefit-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span><strong>Roteiro de Investigação Completa:</strong> Painel de exames laboratoriais essenciais para apresentar ao seu médico.</span>
+              </div>
+
+              <div class="offer-benefit-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span><strong>E-book em PDF de Alta Resolução:</strong> Acesso digital imediato para ler no celular, computador ou tablet.</span>
+              </div>
+
+              <!-- Price Box -->
+              <div class="offer-price-box">
+                <span class="offer-price-original" data-product-price-original {{PRICE_ORIGINAL_ATTR}}>{{PRICE_ORIGINAL}}</span>
+                <div class="offer-price-current" data-product-price>{{PRICE}}</div>
+                <span class="offer-promo-note" data-promo-note {{PROMO_NOTE_ATTR}}>{{PROMO_NOTE}}</span>
+                <span class="offer-price-installment">pagamento único via Pix, cartão de crédito ou débito</span>
+              </div>
+
+              <!-- Guarantee -->
+              <div class="guarantee-badge">
+                <span style="font-size: 28px;">🛡️</span>
+                <div>
+                  <strong>Garantia Incondicional de 7 Dias:</strong> Se por qualquer motivo achar que o material não agregou clareza ao seu caso, basta solicitar o reembolso integral.
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Sales Form / Checkout -->
+            <div class="sales-form-col">
+              <div class="sales-form-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Preencha seus dados para receber o Guia:</span>
+              </div>
+
+              <form class="sales-form" id="sales-checkout-form">
+                <div class="input-group">
+                  <label for="buyer-name">Nome Completo *</label>
+                  <input type="text" id="buyer-name" class="input-field" placeholder="Ex: Carlos Eduardo Silva" required autocomplete="name">
+                </div>
+
+                <div class="input-group">
+                  <label for="buyer-cpf">CPF *</label>
+                  <input type="text" id="buyer-cpf" class="input-field" placeholder="000.000.000-00" required inputmode="numeric" maxlength="14" autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                  <label for="buyer-email">E-mail para Envio do Material *</label>
+                  <input type="email" id="buyer-email" class="input-field" placeholder="seu@email.com" required autocomplete="email">
+                </div>
+
+                <div class="input-group">
+                  <label for="buyer-phone">WhatsApp / Telefone *</label>
+                  <input type="tel" id="buyer-phone" class="input-field" placeholder="(00) 00000-0000" required inputmode="tel" maxlength="15" autocomplete="tel">
+                </div>
+
+                <label class="consent-check checkout-terms" for="buyer-terms">
+                  <input type="checkbox" id="buyer-terms" required>
+                  <span>Li e aceito os <a href="/termos-de-uso" target="_blank" rel="noopener">Termos de Uso</a> e confirmo o <a href="/termo-consentimento-lgpd" target="_blank" rel="noopener">Termo de Consentimento LGPD</a>. Estou ciente do direito de arrependimento em até 7 dias.</span>
+                </label>
+
+                <!-- Payment Method Toggle -->
+                <div class="payment-selector">
+                  <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+                    Forma de Pagamento:
+                  </span>
+                  <div class="payment-options">
+                    <button type="button" class="payment-option-btn active" data-method="pix">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                      Pix (Instantâneo)
+                    </button>
+                    <button type="button" class="payment-option-btn" data-method="card">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                      Cartão
+                    </button>
+                  </div>
+                </div>
+
+              </form>
+
+              <!-- Card Brick mounts outside the form to avoid nesting its internal <form> -->
+              <div id="card-fields-notice" style="display: none;">
+                <p style="padding: 10px; background: rgba(212,175,55,0.08); border-radius: 6px; font-size: 11px; color: var(--gold-300); margin-bottom: 12px;">
+                  💳 Pagamento protegido via Mercado Pago. Seus dados de cartão são criptografados e nunca chegam ao nosso servidor.
+                </p>
+                <div id="card-payment-brick-container"></div>
+              </div>
+
+              <button type="submit" form="sales-checkout-form" class="btn btn--gold btn--block" id="btn-sales-submit" style="padding: 14px 20px; font-size: 15px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Gerar Pix para Acesso Imediato — <span data-product-price>{{PRICE}}</span>
+              </button>
+
+              <!-- Dynamic Pix Box -->
+              <div class="pix-container" id="pix-display-area">
+                <h4 style="color: var(--success); font-size: 14px; margin-bottom: 4px;">⚡ Pix Gerado com Sucesso!</h4>
+                <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Pague pelo seu banco para receber o PDF no e-mail:</p>
+                <div class="pix-timer">Expira em: <span id="pix-countdown">15:00</span></div>
+
+                <div class="pix-qr-wrap">
+                  <img id="pix-qr-img" alt="QR Code Pix" width="180" height="180" hidden>
+                </div>
+
+                <div class="pix-copia-cola-box">
+                  <input type="text" id="pix-code-field" class="pix-copia-cola-input" readonly value="">
+                  <button type="button" class="btn btn--gold btn--sm" id="btn-copy-pix">Copiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DOCTOR AUTHORITY CARD (DISCREET & RESPECTFUL) -->
+      <section class="doctor-authority-card">
+        <img 
+          src="https://itomeireles.com.br/wp-content/uploads/2026/04/DSC09855-2.JPG-scaled.jpeg" 
+          alt="Dr. Ito Meireles" 
+          class="doctor-authority-card__avatar"
+        >
+        <div class="doctor-authority-card__info">
+          <h4>Supervisão Técnica: Dr. Ito Meireles Filho</h4>
+          <div class="doctor-authority-card__crm">CRM-BA 16994 | RQE 7229 &bull; Membro Titular da SBCP & ABCRC &bull; Membro da ISHRS e professor do BCRC</div>
+          <p class="doctor-authority-card__text">
+            Cirurgião plástico com mais de 25 anos de dedicação à restauração capilar. Os materiais educativos e os parâmetros deste teste foram estruturados com rigor técnico para orientar e conscientizar os pacientes com transparência e ética.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. FAQ ACCORDION SECTION -->
+      <section class="faq-section">
+        <h3 class="faq-title">Dúvidas Frequentes</h3>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>O resultado do teste substitui uma consulta médica?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              Não. O teste tem caráter educativo e o e-book é um material educativo; nenhum dos dois constitui consulta, diagnóstico ou prescrição. Para diagnóstico clínico e prescrição medicamentosa, consulte sempre um médico habilitado presencialmente.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Como recebo o e-book após a confirmação?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              A liberação é automática e instantânea. Assim que o pagamento é confirmado, nosso sistema envia o arquivo digital em PDF de alta qualidade para o seu e-mail e disponibiliza o link de download direto.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>E se eu quiser reembolso?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              Você conta com garantia incondicional de 7 dias, prevista pelo Código de Defesa do Consumidor. Caso o conteúdo não atenda às suas expectativas, basta solicitar o reembolso.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FOOTER DISCLAIMER (CFM & LEGISLAÇÃO) -->
+      <p class="result-disclaimer">
+        <strong>Aviso Legal e Ético (CFM Resolução 2.336/2023):</strong> Este teste online e o material educativo complementar possuem caráter exclusivamente informativo e pedagógico. Não configuram consulta médica, teleconsulta, diagnóstico clínico definitivo ou prescrição de qualquer natureza. Decisões terapêuticas individuais devem ser tomadas em conjunto com um médico registrado no CRM após avaliação clínica presencial. Dr. Ito Meireles Filho — CRM-BA 16994 | RQE 7229.<br>
+        Hairline Academy LTDA — CNPJ 59.501.488/0001-83 — Salvador-BA · Ambiente seguro com criptografia SSL.<br>
+        <a href="/termos-de-uso">Termos de Uso</a> · <a href="/termo-consentimento-lgpd">Termo de Consentimento LGPD</a> · <a href="/politica-cookies">Política de Cookies</a> · <a href="mailto:contato@testedecalvicie.com.br">contato@testedecalvicie.com.br</a>
+      </p>
+
+    </main>
+  </div>
+
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <script src="/js/result-profile.js?v=20261001"></script>
+  <script src="/js/sales-checkout.js?v=20261001"></script>
+
+  <!-- ====== COOKIE BANNER (LGPD) ====== -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">
+        🍪 Usamos cookies necessários para o funcionamento do site e, somente com a sua permissão, cookies de análise e marketing.
+        Saiba mais na <a href="/politica-cookies.html" id="link-cookies">Política de Cookies</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept-all">Aceitar Todos</button>
+        <button class="cookie-banner__btn cookie-banner__btn--customize" id="cookie-customize">Personalizar</button>
+        <button class="cookie-banner__btn cookie-banner__btn--minimal" id="cookie-accept-minimal">Apenas Necessários</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== COOKIE PREFERENCES MODAL (LGPD) ====== -->
+  <div class="cookie-modal-overlay" id="cookie-modal-overlay">
+    <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+      <h3 class="cookie-modal__title" id="cookie-modal-title">Preferências de Cookies</h3>
+      <p class="cookie-modal__desc">
+        Escolha quais categorias de cookies você permite. Cookies necessários não podem ser desativados pois são essenciais para o funcionamento do site.
+      </p>
+
+      <div class="cookie-modal__category">
+        <div class="cookie-modal__category-info">
+          <div class="cookie-modal__category-title">Necessários</div>
+          <div class="cookie-modal__category-desc">Essenciais para o funcionamento do site (sessão, segurança, carrinho de compra).</div>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" checked disabled>
+          <span class="cookie-toggle__slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-modal__category">
+        <div class="cookie-modal__category-info">
+          <div class="cookie-modal__category-title">Analíticos</div>
+          <div class="cookie-modal__category-desc">Nos ajudam a entender como você utiliza o site para melhorarmos sua experiência.</div>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookie-toggle-analytics">
+          <span class="cookie-toggle__slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-modal__category">
+        <div class="cookie-modal__category-info">
+          <div class="cookie-modal__category-title">Marketing</div>
+          <div class="cookie-modal__category-desc">Usados para personalizar anúncios e medir a eficácia de campanhas (Facebook Pixel, Google Ads).</div>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookie-toggle-marketing">
+          <span class="cookie-toggle__slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-modal__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--minimal" id="cookie-save-preferences">Salvar Preferências</button>
+        <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-modal-accept-all">Aceitar Todos</button>
+      </div>
+      <button class="cookie-banner__btn cookie-banner__btn--customize cookie-modal__close" id="cookie-modal-close">Fechar</button>
+    </div>
+  </div>
+
+  <script src="/js/meta-pixel.js?v=20261011"></script>
+  <script src="/js/cookie-consent.js"></script>
+</body>
+</html>
