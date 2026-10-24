@@ -447,6 +447,85 @@
   font-weight: 500;
 }
 
+/* Vimeo Player custom controls */
+.vsl-controls {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.vsl-ctrl-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(10, 12, 16, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-spring), transform var(--duration-fast) var(--ease-spring);
+}
+
+.vsl-ctrl-btn:hover {
+  background: rgba(212, 175, 55, 0.25);
+}
+
+.vsl-ctrl-btn:focus-visible {
+  outline: 2px solid var(--gold, #D4AF37);
+  outline-offset: 2px;
+}
+
+.vsl-end-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: #0B0E14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vsl-replay-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-gold);
+  color: #0A0800;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.vsl-replay-btn:hover {
+  transform: scale(1.05);
+}
+
+.vsl-replay-btn:focus-visible {
+  outline: 2px solid #0A0800;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vsl-ctrl-btn,
+  .vsl-replay-btn,
+  .vsl-poster__img,
+  .vsl-play-btn {
+    transition: none !important;
+  }
+}
+
 /* ---------- Marketing & Persuasion Section ---------- */
 .persuasion-section {
   margin-bottom: var(--space-16);

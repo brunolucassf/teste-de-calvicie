@@ -60,23 +60,141 @@ document.addEventListener('DOMContentLoaded', () => {
     return false;
   }
 
-  // 2. Setup Video Poster / Vimeo Embed
+  // 2. Setup Video Poster / Vimeo Player SDK
   const videoWrapper = document.getElementById('video-wrapper');
   const videoPoster = document.getElementById('video-poster');
-  if (videoWrapper && videoPoster) {
+  const videoControls = document.getElementById('video-controls');
+  const videoEndCover = document.getElementById('video-end-cover');
+  const btnPlayPause = document.getElementById('video-btn-playpause');
+  const btnMute = document.getElementById('video-btn-mute');
+  const btnReplay = document.getElementById('video-btn-replay');
+
+  if (videoWrapper && videoPoster && window.Vimeo && typeof window.Vimeo.Player === 'function') {
+    let vimeoPlayer = null;
+    let isMuted = false;
+
+    function setPlayPauseIcon(playing) {
+      if (!btnPlayPause) return;
+      const iconPlay = btnPlayPause.querySelector('.vsl-ico-play');
+      const iconPause = btnPlayPause.querySelector('.vsl-ico-pause');
+      if (iconPlay) iconPlay.hidden = playing;
+      if (iconPause) iconPause.hidden = !playing;
+      btnPlayPause.setAttribute('aria-label', playing ? 'Pausar vídeo' : 'Reproduzir vídeo');
+    }
+
+    function setMuteIcon(muted) {
+      if (!btnMute) return;
+      const iconSound = btnMute.querySelector('.vsl-ico-sound');
+      const iconMute = btnMute.querySelector('.vsl-ico-mute');
+      if (iconSound) iconSound.hidden = muted;
+      if (iconMute) iconMute.hidden = !muted;
+      btnMute.setAttribute('aria-label', muted ? 'Ativar som' : 'Mudo');
+    }
+
+    function enablePtCaptions(player) {
+      // texttrack=pt-x-autogen já vai na query string do embed; aqui confirmamos
+      // disponibilidade e ativamos via SDK, sem travar a página se a faixa não existir.
+      player.getTextTracks()
+        .then(tracks => {
+          const ptTrack = tracks.find(t => t.language === 'pt-x-autogen' || t.language === 'pt');
+          if (ptTrack) {
+            return player.enableTextTrack(ptTrack.language, ptTrack.kind).catch(() => {});
+          }
+        })
+        .catch(() => {});
+    }
+
+    function createPlayer(vimeoId, videoTitle) {
+      if (vimeoPlayer) return;
+
+      const container = document.createElement('div');
+      container.style.cssText = 'position:absolute;inset:0;';
+      videoWrapper.insertBefore(container, videoControls || null);
+
+      vimeoPlayer = new window.Vimeo.Player(container, {
+        id: vimeoId,
+        texttrack: 'pt-x-autogen',
+        autoplay: false,
+        loop: false,
+        controls: false,
+        title: false,
+        byline: false,
+        portrait: false,
+        badge: false,
+        autopause: true,
+        playsinline: true,
+        dnt: true
+      });
+
+      vimeoPlayer.ready()
+        .then(() => {
+          vimeoPlayer.element.title = videoTitle;
+          enablePtCaptions(vimeoPlayer);
+          return vimeoPlayer.play();
+        })
+        .then(() => {
+          setPlayPauseIcon(true);
+          if (videoControls) videoControls.hidden = false;
+        })
+        .catch(() => {});
+
+      vimeoPlayer.on('play', () => setPlayPauseIcon(true));
+      vimeoPlayer.on('pause', () => setPlayPauseIcon(false));
+      vimeoPlayer.on('volumechange', data => {
+        isMuted = !!(data && data.volume === 0);
+        setMuteIcon(isMuted);
+      });
+      vimeoPlayer.on('ended', () => {
+        if (videoEndCover) videoEndCover.hidden = false;
+      });
+    }
+
     videoPoster.addEventListener('click', () => {
       const vimeoId = (videoWrapper.getAttribute('data-vimeo-id') || '').replace(/\D/g, '');
       if (!vimeoId) return;
       const videoTitle = videoWrapper.getAttribute('data-video-title') || 'Vídeo de orientação';
-      // O player só é carregado no clique (nada do Vimeo roda antes). dnt=1 pede ao Vimeo que não rastreie o visitante (LGPD).
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0&playsinline=1&dnt=1`;
-      iframe.title = videoTitle;
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;';
-      videoWrapper.replaceChildren(iframe);
+      videoPoster.hidden = true;
+      createPlayer(vimeoId, videoTitle);
+    });
+
+    if (btnPlayPause) {
+      btnPlayPause.addEventListener('click', () => {
+        if (!vimeoPlayer) return;
+        vimeoPlayer.getPaused()
+          .then(paused => (paused ? vimeoPlayer.play() : vimeoPlayer.pause()))
+          .catch(() => {});
+      });
+    }
+
+    if (btnMute) {
+      btnMute.addEventListener('click', () => {
+        if (!vimeoPlayer) return;
+        vimeoPlayer.setVolume(isMuted ? 1 : 0).catch(() => {});
+      });
+    }
+
+    if (btnReplay) {
+      btnReplay.addEventListener('click', () => {
+        if (!vimeoPlayer) return;
+        vimeoPlayer.setCurrentTime(0)
+          .then(() => vimeoPlayer.play())
+          .then(() => {
+            // Só remove a cobertura quando o player confirmar que voltou a tocar,
+            // pra evitar flash das recomendações do Vimeo no meio do caminho.
+            if (videoEndCover) videoEndCover.hidden = true;
+          })
+          .catch(() => {
+            if (videoEndCover) videoEndCover.hidden = true;
+          });
+      });
+    }
+
+    window.addEventListener('pagehide', () => {
+      if (vimeoPlayer) {
+        vimeoPlayer.unload().catch(() => {});
+        vimeoPlayer.destroy().catch(() => {});
+        vimeoPlayer = null;
+      }
     });
   }
 
