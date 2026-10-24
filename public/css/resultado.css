@@ -200,9 +200,10 @@
   line-height: 1.5;
 }
 
-/* Painel curto: título + subtítulo de uma linha, vídeo com o destaque */
+/* Painel curto: título + subtítulo de uma linha, abaixo do vídeo, largura igual à grade de 4 colunas */
 .profile-result--compact {
-  margin-bottom: var(--space-5);
+  max-width: none;
+  margin-bottom: var(--space-16);
   padding: var(--space-4);
 }
 

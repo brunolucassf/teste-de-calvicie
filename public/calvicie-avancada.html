@@ -44,7 +44,33 @@
 
     <main class="result-container">
 
-      <!-- 1. PERFIL CAPILAR (resumo curto — destaque vai para o vídeo) -->
+      <!-- 1. VÍDEO DE ORIENTAÇÃO (9:16) — destaque principal da página -->
+      <section class="video-section video-section--featured">
+        <div class="video-section__badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Orientação Informativa em Vídeo
+        </div>
+        <h2 class="video-section__title">A orientação realista sobre calvície avançada e preservação capilar</h2>
+
+        <!-- Vertical 9:16 Video Container (Vimeo / Panda Ready) -->
+        <div class="vertical-video-wrapper" id="video-wrapper" data-vimeo-id="1186323471" data-video-title="Calvície Avançada">
+          <div class="vsl-poster" id="video-poster">
+            <img
+              src="https://itomeireles.com.br/wp-content/uploads/2026/04/DSC09855-2.JPG-scaled.jpeg"
+              alt="Dr. Ito Meireles orientando sobre calvície avançada"
+              class="vsl-poster__img"
+            >
+            <div class="vsl-play-btn">
+              <svg width="32" height="32" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="vsl-caption">
+              ▶ Clique para assistir à orientação do Dr. Ito Meireles
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. PERFIL CAPILAR (resumo curto, abaixo do vídeo, largura igual à grade de 4 colunas) -->
       <section class="profile-result profile-result--avancado profile-result--compact" aria-labelledby="profile-title">
         <div class="profile-scale" id="profile-scale" role="img" aria-label="Escala de perfil: Avançado">
             <span class="profile-scale__step">Leve</span>
@@ -62,32 +88,6 @@
         <div class="profile-alerts" id="profile-alerts" hidden></div>
 
         <p class="profile-result__disclaimer">Este teste tem caráter educativo e não substitui diagnóstico ou avaliação médica.</p>
-      </section>
-
-      <!-- 2. VÍDEO DE ORIENTAÇÃO (9:16) — destaque principal da página -->
-      <section class="video-section video-section--featured">
-        <div class="video-section__badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-          Orientação Informativa em Vídeo
-        </div>
-        <h2 class="video-section__title">A orientação realista sobre calvície avançada e preservação capilar</h2>
-
-        <!-- Vertical 9:16 Video Container (Vimeo / Panda Ready) -->
-        <div class="vertical-video-wrapper" id="video-wrapper" data-vimeo-id="1186323471" data-video-title="Calvície Avançada">
-          <div class="vsl-poster" id="video-poster">
-            <img 
-              src="https://itomeireles.com.br/wp-content/uploads/2026/04/DSC09855-2.JPG-scaled.jpeg" 
-              alt="Dr. Ito Meireles orientando sobre calvície avançada" 
-              class="vsl-poster__img"
-            >
-            <div class="vsl-play-btn">
-              <svg width="32" height="32" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <div class="vsl-caption">
-              ▶ Clique para assistir à orientação do Dr. Ito Meireles
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- 3. PERSUASION & MARKETING SECTION (BELOW VIDEO) -->
